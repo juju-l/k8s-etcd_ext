@@ -1,0 +1,11 @@
+{
+  "CN": "kube-etcd-healthcheck-client",
+  "_": "cfssl gencert --config=ca-config.json -ca=ca.pem -ca-key=ca-key.pem -profile=etcd healthcheck-client-csr.json |cfssljson -bare healthcheck-client",
+  "key": {
+    "algo": "rsa",
+    "size": 2048
+  },
+  "names": [{
+    "O": "system:masters"
+  }]
+}

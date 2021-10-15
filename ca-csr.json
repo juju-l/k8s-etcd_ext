@@ -1,0 +1,8 @@
+{
+  "CN": "etcd-ca",
+  "_": "cfssl gencert -initca ca-csr.json |cfssljson -bare ca",
+  "key": {
+    "algo": "rsa",
+    "size": 2048
+  }
+}
