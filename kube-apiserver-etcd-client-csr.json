@@ -1,0 +1,11 @@
+{
+  "CN": "kube-apiserver-etcd-client",
+  "_": "cfssl gencert --config=ca-config.json -ca=ca.pem -ca-key=ca-key.pem -profile=etcd apiserver-etcd-client-csr.json |cfssljson -bare apiserver-etcd-client",
+  "key": {
+    "algo": "rsa",
+    "size": 2048
+  },
+  "names": [{
+    "O": "system:masters"
+  }]
+}
