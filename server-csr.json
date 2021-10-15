@@ -3,10 +3,10 @@
   "_": "cfssl gencert --config=ca-config.json -ca=ca.pem -ca-key=ca-key.pem -profile=etcd server-csr.json |cfssljson -bare server",
   "hosts": [
     "127.0.0.1",
-    "0.0.0.0",
     "10.0.7.251",
-    "10.0.7.252",
-    "10.0.7.253",
+    "10.0.7.101",
+    "10.0.7.102",
+    "10.0.7.103",
     "localhost"
   ],
   "key": {
