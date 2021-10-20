@@ -40,4 +40,12 @@ id=`echo $ip|cut -d '.' -f4`;i=${id: -1}
 ~/.start.sh
 done
 
+docker run --rm -it --name cli --net etcd --ip 10.0.1.106 \
+  -v ~/.k8s-etcds/cert:/etc/kubernetes/pki/etcd \
+  swr.cn-east-3.myhuaweicloud.com/vipexcc/k8s/k8s.gcr.io/etcd:3.4.13-0 \
+  etcdctl --cacert=/etc/kubernetes/pki/etcd/ca.crt \
+  --cert=/etc/kubernetes/pki/etcd/server.crt --key=/etc/kubernetes/pki/etcd/server.key \
+  --endpoints="10.0.1.101:2379,10.0.1.102:2379,10.0.1.103:2379" endpoint status \
+--write-out=table
+
 #...
